@@ -17,7 +17,7 @@ function LookupFamousPeopleByName(name) {
   return query;
 };
 
-function displayFamousQuery(results) {
+function displayFamousPeople(results) {
   results.forEach(function(val, index) {
     const id = results[index].id;
     const firstName = results[index].first_name;
@@ -38,7 +38,7 @@ client.connect((err) => {
     }
     console.log("Searching ...");
     console.log(`Found ${result.rowCount} person(s) by the name '${arg}':`);
-    displayFamousQuery(result.rows);
+    displayFamousPeople(result.rows);
 
     client.end();
   });
